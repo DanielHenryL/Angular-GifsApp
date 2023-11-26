@@ -13,6 +13,10 @@ export class GifsService {
   private serviceUrl = 'https://api.giphy.com/v1/gifs';
   constructor( private http:HttpClient) { }
 
+  get GifList(){
+    return [...this.gifList];
+  }
+
   get TagsHistory(){
     return [...this._tagsHistory];
   }
@@ -47,7 +51,6 @@ export class GifsService {
     this.http.get<SearchResponse>(`${ this.serviceUrl }/search`,{ params:params })
       .subscribe( resp => {
         this.gifList = resp.data;
-        console.log({ gif: this.gifList });
       });
   }
 
