@@ -1,6 +1,10 @@
-<div class="card mb-3" style="min-height: 20rem;">
-  <img [src]="gif.images.downsized_medium.url" height="200rem" width="200rem" class="card-img-top" [alt]="gif.title">
-  <div class="card-body">
+<div class="card mb-3 bg-primary text-center" style="min-height: 20rem;">
+  <shared-lazy-image
+    [url]="gif.images.downsized_medium.url"
+    [alt]="gif.title"
+  ></shared-lazy-image>
+  <!-- <img [src]="gif.images.downsized_medium.url" height="200rem" width="200rem" class="card-img-top" [alt]="gif.title"> -->
+  <div class="card-body text-white">
     <h5 class="card-title">{{ gif.title }}</h5>
     <p class="card-text">{{ gif.title }}</p>
   </div>
